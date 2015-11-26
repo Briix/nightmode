@@ -17,17 +17,16 @@ var nightmode = {
         utcDate = new Date(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
         console.log(data["results"]["sunrise"]);
         console.log(utcDate);
-        if (data["results"]["sunset"] < utcDate.toISOString() || data["results"]["sunset"] > utcDate.toISOString()) {
-            for (var prop in nightmode.css) {
-                for (var attr in nightmode.css[prop]) {
-                    var elements = document.querySelectorAll(prop);
-                    for (var i = 0; i < elements.length; i++) {
-                        elements[i].style[attr] = nightmode.css[prop][attr];
-                    }
+        (data["results"]["sunset"] > utcDate.toISOString() && data["results"]["sunrise"] < utcDate.toISOString()) ? null : nightmode.changeCSS();
+    },
+    changeCSS: function() {
+        for (var prop in nightmode.css) {
+            for (var attr in nightmode.css[prop]) {
+                var elements = document.querySelectorAll(prop);
+                for (var i = 0; i < elements.length; i++) {
+                    elements[i].style[attr] = nightmode.css[prop][attr];
                 }
             }
-        } else {
-            console.log("Uh, it's supposed to be morning, right?");
         }
     },
     getJSONP: function(url) {
