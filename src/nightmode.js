@@ -8,15 +8,11 @@ var nightmode = {
     update: function(position) {
         var lat = position.coords.latitude;
         var lon = position.coords.longitude;
-        console.log("Lat: " + lat + ", lon: " + lon);
         nightmode.getJSONP("http://api.sunrise-sunset.org/json?lat=" + lat + "&lng=" + lon + "&formatted=0&callback=nightmode.success");
     },
     success: function(data) {
-        console.log(data);
         var now = new Date();
         utcDate = new Date(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
-        console.log(data["results"]["sunrise"]);
-        console.log(utcDate);
         (data["results"]["sunset"] > utcDate.toISOString() && data["results"]["sunrise"] < utcDate.toISOString()) ? null : nightmode.changeCSS();
     },
     changeCSS: function() {
