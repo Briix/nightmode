@@ -12,8 +12,7 @@ var nightmode = {
     },
     success: function(data) {
         var now = new Date();
-        utcDate = new Date(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
-        (data["results"]["sunset"] > utcDate.toISOString() && data["results"]["sunrise"] < utcDate.toISOString()) ? null : nightmode.changeCSS();
+        (data["results"]["sunset"] > now.toISOString() && data["results"]["sunrise"] < now.toISOString()) ? null : nightmode.changeCSS();
     },
     changeCSS: function() {
         for (var prop in nightmode.css) {
