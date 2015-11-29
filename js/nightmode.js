@@ -8,7 +8,7 @@ var nightmode = {
     update: function(position) {
         var lat = position.coords.latitude;
         var lon = position.coords.longitude;
-        nightmode.getJSONP("http://api.sunrise-sunset.org/json?lat=" + lat + "&lng=" + lon + "&formatted=0&callback=nightmode.success");
+        nightmode.getJSONP("//api.sunrise-sunset.org/json?lat=" + lat + "&lng=" + lon + "&formatted=0&callback=nightmode.success");
     },
     success: function(data) {
         var now = new Date();
