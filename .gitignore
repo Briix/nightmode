@@ -1,1 +1,4 @@
 examples
+
+# Vim swp files
+*.swp
