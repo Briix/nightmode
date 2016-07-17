@@ -1,6 +1,6 @@
 NightMode.js
 ===========
-Specify CSS that will only be applied when the sun is down. It's easy to use and experiment with [but I wouldn't recommend using it for serious stuff yet.](http://simonbrix.dk/blog/posts/night-mode-for-the-web)
+Specify CSS that will only be applied when the sun is down. It's easy to use and experiment with [but I wouldn't recommend using it for serious stuff yet.](http://simonbrix.dk/2016/07/15/nightmode-for-the-web.html)
 
 Initializing NightMode.js
 -------------------------
