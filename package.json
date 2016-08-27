@@ -1,0 +1,22 @@
+{
+  "name": "nightmode",
+  "description": "Do stuff when the sun is down.",
+  "author": "Simon Brix",
+  "version": "0.1.0",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": "Briix/nightmode",
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {
+    "suncalc": "^1.7.0"
+  },
+  "devDependencies": {
+    "ava": "*"
+  }
+}

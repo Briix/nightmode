@@ -1,62 +1,43 @@
-NightMode.js
-===========
-Specify CSS that will only be applied when the sun is down. It's easy to use and experiment with [but I wouldn't recommend using it for serious stuff yet.](http://simonbrix.dk/2016/07/15/nightmode-for-the-web.html)
+# nightmode [![Build Status](https://secure.travis-ci.org/Briix/nightmode.svg?branch=master)](https://travis-ci.org/Briix/nightmode) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
-Initializing NightMode.js
--------------------------
-Initialize NightMode.js by declaring your night mode css
+([http://simonbrix.dk/2016/07/15/nightmode-for-the-web.html](Do stuff when the sun is down)).
 
-    nightmode.css = {
-        "body": {
-            "background": "#020111",
-            "color": "rgb(215, 215, 215)"
-        },
-        "body>p": {
-            "color": "#93a1a1"
-        }
-    }
+## Installation
 
-Loading CSS
------------
-When loading the night mode css you can either use
+```bash
+npm install --save nightmode
+```
 
-    nightmode.load();
+## Usage
 
-This will only load the night mode css if the sun has set
+```javascript
+var nightmode = require('nightmode')
 
-*OR*
+// Specify coordinates and date
+nightmode(['51.5', '-0.1'], new Date()).then(() => {
+    // do stuff
+})
 
-You can use
+// or leave blank and use today's date and navigator.geolocation
+nightmode().then(() => {
+    // do stuff
+})
+```
 
-    nightmode.changeCSS();
+## License
 
-This will just apply the night mode css
+MIT
 
-Help
-====
-If you want to help out by improving the script or the generally functionality, please don't hesitate to fork the repo. You can also hit me up on Twitter [@br11x](https://twitter.com/br11x) for a conversation about it :-)
+## Contributing
 
-License
-=======
-Copyright (c) 2015 Briix
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
 
+Crafted with <3 by Simon Brix ([@br11x](https://twitter.com/br11x)).
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+***
 
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+> This package was initially generated with [yeoman](http://yeoman.io) and the [p generator](https://github.com/johnotander/generator-p.git).

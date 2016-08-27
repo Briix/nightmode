@@ -1,4 +1,2 @@
-examples
-
-# Vim swp files
+node_modules/
 *.swp
