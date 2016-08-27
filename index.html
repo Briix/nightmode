@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>NightModejs</title>
+    <title>NightMode</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/tachyons.min.css">
+    <style>
+      .dusk-gradient {
+        background: #ffd89b;
+        background: linear-gradient(to left, #ffd89b , #19547b);
+      }
+    </style>
   </head>
   <body>
 
-    <div class="pl4 mb4 pr4 pr0-ns sans-serif">
-        <h1 class="f-6-ns f2 mb0">NightMode.js</h1>
-        <p class="f3-ns f4 black-50 mt1">Specify CSS that will only be applied when the sun is down.<br><a class="link orange underline-hover" href="http://simonbrix.dk/2016/07/15/nightmode-for-the-web.html">I wouldn't recommend using it yet though.</a></p>
-      <a href="http://github.com/briix/sassy-mixins" class="link black hover-bg-light-gray dib pv3 ph4 br2 ba b--black-20">View on Github</a>
-        </div>
+    <div class="pa4 pr0-ns sans-serif dusk-gradient">
+      <h1 class="white f-6-ns f2 ma0">NightMode</h1>
+      <p class="f3-ns f4 white-70 mt1">Do stuff when the sun is down.</p>
+      <a href="http://github.com/briix/nightmode" class="link white hover-bg-near-white dib hover-near-black pv3 ph4 br2 ba b--white">View on Github</a>
+    </div>
 
-        <div class="pl4 pr4 pr0-ns bg-black-05 bt bb b--black-10">
-        <h2 class="f2">Initializing NightMode.js</h2>
-        <pre class=pre><code class="code pa3 bg-black-20 dib br1">nightmode.css = {
-    "body": {
-        "background": "#020111",
-        "color": "rgb(215, 215, 215)"
-    },
-    "body>p": {
-        "color": "#93a1a1"
-    }
-}</code></pre>
+    <div class="pl4 pr4 pr0-l bb b--black-10">
+      <h2 class="f2">Installation</h2>
+      <pre class=pre><code class="code pa3 bg-black-10 dib br1">npm install --save nightmode</code></pre>
+      <h2 class="f2">Usage</h2>
+      <pre class=pre><code class="code pa3 bg-black-10 dib br1">var nightmode = require('nightmode')
 
-        <h2 class="f2">Loading CSS</h2>
-        <p class="f4">When loading the night mode css you can either use</p>
-        <pre class="pre"><code class="code pa3 bg-black-20 dib br1">nightmode.load();</code></pre>
-        <p class="f4">This will only load the night mode css if the sun has set <em class="db pv2">OR</em> You can use</p>
-        <pre class="pre"><code class="code pa3 bg-black-20 dib br1">nightmode.changeCSS();</code></pre>
-        <p class="f4">This will just apply the night mode css</p>
-        </div>
-        <div class="pa4">
-          <p>Sunset/sunrise times provided by <a class="link orange underline-hover" href="http://sunrise-sunset.org/">Sunrise Sunset</a></p>
-        </div>
+// Specify coordinates and date
+nightmode(['51.5', '-0.1'], new Date()).then(() => {
+  // do stuff
+})
+
+// or leave blank and use today's date and navigator.geolocation
+nightmode().then(() => {
+  // do stuff
+})</code></pre>
+    </div>
+    <div class="pa4 bg-black-05">
+      <p>by <a class="link orange underline-hover" href="http://simonbrix.dk">Briix</a></p>
+    </div>
   </body>
 </html>
