@@ -27,8 +27,8 @@ module.exports = function nightmode (coords, date) {
 }
 
 function isSunDown(lat, lon, date) {
-  var times = suncalc.getTime(now, lat, lon);
-  if(times.sunset > now && times.sunrise < now) {
+  var times = suncalc.getTimes(date, lat, lon);
+  if(times.sunset > date && times.sunrise < date) {
     return false
   } else {
     return true
